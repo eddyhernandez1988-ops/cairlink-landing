@@ -23,7 +23,7 @@ export default function Page() {
     try {
       const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
       const data = await res.json();
-      if (!res.ok || data.ok !== True && data.ok !== true) {
+      if (!res.ok || data.ok !== true && data.ok !== true) {
         setError(data?.error || "Submission failed");
       } else {
         setSubmitted(true);
